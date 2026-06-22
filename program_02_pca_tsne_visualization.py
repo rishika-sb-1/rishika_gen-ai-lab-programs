@@ -1,13 +1,9 @@
-# Program 2: PCA / t-SNE Visualization and Similar Words
-
-# !pip install gensim numpy matplotlib scikit-learn
-
+#!pip install gensim numpy matplotlib scikit-learn
 import gensim.downloader as api
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
-
 print("Loading pre-trained word vectors...")
 word_vectors = api.load("word2vec-google-news-300")
 
@@ -23,7 +19,6 @@ def explore_word_relationships(word1, word2, word3):
         print("Most similar words to the result (excluding input words):")
         for word, similarity in filtered_words[:5]:
             print(f"{word}: {similarity:.4f}")
-
         return filtered_words
 
     except KeyError as e:

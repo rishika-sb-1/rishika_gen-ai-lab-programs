@@ -1,12 +1,8 @@
-# Program 1: Explore Pre-trained Word Vectors
 
-# Install necessary libraries
-# !pip install gensim numpy
-
+!pip install gensim numpy
 import gensim.downloader as api
 import numpy as np
 from numpy.linalg import norm
-
 print("Loading pre-trained word vectors...")
 word_vectors = api.load("word2vec-google-news-300")
 
@@ -15,10 +11,8 @@ def explore_word_relationships(word1, word2, word3):
         vec1 = word_vectors[word1]
         vec2 = word_vectors[word2]
         vec3 = word_vectors[word3]
-
         result_vector = vec1 - vec2 + vec3
         similar_words = word_vectors.similar_by_vector(result_vector, topn=10)
-
         input_words = {word1, word2, word3}
         filtered_words = [(word, similarity) for word, similarity in similar_words if word not in input_words]
 

@@ -1,5 +1,5 @@
 
-!pip install gensim numpy
+#!pip install gensim numpy
 import gensim.downloader as api
 import numpy as np
 from numpy.linalg import norm
